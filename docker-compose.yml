@@ -22,7 +22,7 @@ services:
       - "80:80"
     volumes:
       - ./php:/var/www/html
-    image: yuvalbal/super-app-node:latest
+    image: yuvalbal/super-app-php:latest
     depends_on:
       - db
 
