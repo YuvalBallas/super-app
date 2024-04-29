@@ -9,6 +9,7 @@ services:
       - "3000:3000"
     volumes:
       - ./node:/app
+    image: yuvalbal/super-app-node:latest
     depends_on:
       - php
       - db
@@ -21,6 +22,7 @@ services:
       - "80:80"
     volumes:
       - ./php:/var/www/html
+    image: yuvalbal/super-app-node:latest
     depends_on:
       - db
 
