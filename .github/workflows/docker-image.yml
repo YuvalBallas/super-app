@@ -20,6 +20,9 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
+    - name: Build Docker images
+      run: docker-compose -f docker-compose.yml build
+
     - name: Docker login to registry
       run: docker login -u ${{ secrets.docker_hub_user }} -p ${{ secrets.docker_hub_pass }} 
 
