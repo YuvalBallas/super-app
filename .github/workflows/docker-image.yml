@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: 
+
+jobs:
+
+  CI:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      
+    - name: Build the Node Docker image
+      run: docker build . --file node/Dockerfile --tag yuvalbal/super-app-node:${{ github.run_number }}-${{ github.sha }}
+
+    - name: Build the PHP Docker image
+      run: docker build . --file php/Dockerfile --tag yuvalbal/super-app-php:${{ github.run_number }}-${{ github.sha }}
