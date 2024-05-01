@@ -5,5 +5,7 @@ docker pull yuvalbal/super-app-node:latest
 docker pull yuvalbal/super-app-php:latest
 docker pull mysql:latest
 
+cd super-app
+
 # Start containers
 docker compose -f docker-compose.yml up -d
