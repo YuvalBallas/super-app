@@ -6,5 +6,4 @@ docker pull yuvalbal/super-app-php:latest
 docker pull mysql:latest
 
 # Start containers
-docker-compose -f docker-compose.yml up -d
-#docker compose -f docker-compose.yml up -d
+docker compose -f docker-compose.yml up -d
